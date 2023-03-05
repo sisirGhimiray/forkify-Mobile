@@ -1,4 +1,4 @@
-dist
-algo
-vscode
-node_modules
+./dist/
+./algo/
+./.vscode/
+./node_modules/
