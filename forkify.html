@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>forkify // Search over 1,000,000 recipes</title>
+    <link rel="stylesheet" href="./public/css/fork.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <img
+          class="upper-logo"
+          src="./public/img/logo.09084f39.png"
+          alt="forkify logo"
+        />
+        <div class="addrecipe-and-bookmark">
+          <div class="add-recipe">
+            <span>ADD RECIPE</span>
+            <span>BOOKMARK</span>
+          </div>
+        </div>
+        <form class="search-input-btn">
+          <input
+            type="search"
+            class="search"
+            placeholder="Search over 1,000,000 recipes..."
+            required
+          />
+          <button class="search-button">Search</button>
+        </form>
+      </div>
+      <!-- <div class="something-text">
+        <p>Start by searching for a recipe or an ingredient. Have fun!</p>
+      </div> -->
+
+      <div class="search-results">
+        <!-- <div class="spinner__div">
+          <div class="spinner"></div>
+        </div> -->
+        <ul class="results">
+          <!-- <li class="result">
+            <a href="#" class="preview-link">
+              <figure class="result-img">
+                <img
+                  class="preview-img"
+                  src="./pizzaImg.jpg"
+                  alt=""
+                  srcset=""
+                />
+              </figure>
+              <div class="preview-box">
+                <h4 class="preview-title">cauliflower pizza crust</h4>
+                <p class="preview-recipe-by preview-publisher">
+                  closest Cooking
+                </p>
+              </div>
+            </a>
+          </li> -->
+        </ul>
+
+        <!-- RecipeView Modal -->
+        <main class="recipecontainer__modal hidden">
+          <!-- <span class="close__modal">&times;</span>
+          <figure class="recipe__fig">
+            <img class="recipeImage" src="#" alt="recipe Image" />
+            <h1 class="recipeTitle">
+              <span>Recipe Title</span>
+            </h1>
+          </figure>
+          <div class="recipe__details"></div>
+          <div class="recipe--ingredients"></div>
+          <div class="recipe--Cooking--way"></div> -->
+        </main>
+        <!-- pagination -->
+      </div>
+      <div class="pagination">
+        <!-- <button class="prev">prev</button>
+        <button class="next">next</button> -->
+      </div>
+      <!-- spinner -->
+    </div>
+
+    <script defer type="module" src="./dist/bundle.js"></script>
+  </body>
+</html>

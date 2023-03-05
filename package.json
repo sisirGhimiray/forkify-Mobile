@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "build": "esbuild ./public/js/controller.js --bundle --watch --outfile=./dist/bundle.js"
+  },
+  "dependencies": {
+    "esbuild": "0.17.10"
+  }
+}

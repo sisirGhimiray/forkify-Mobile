@@ -1,0 +1,264 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: sans-serif;
+  background-image: linear-gradient(to right bottom, #fbdb89, #f48982);
+  background-repeat: no-repeat;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 39.3rem;
+
+  margin-top: 6.2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 5rem;
+  background-color: #fff;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header {
+  position: relative;
+  background-color: #f9f5f3;
+  padding: 12px 0;
+  display: grid;
+  grid-template-columns: repeat(autofit, 1);
+  grid-template-rows: repeat(1fr, 3);
+}
+
+.upper-logo {
+  height: 4.2rem;
+  max-width: 12.2rem;
+  margin-left: 1.2rem;
+}
+
+.addrecipe-and-bookmark {
+  font-size: 1.1rem;
+  margin-left: auto;
+  /* grid-row: 1; */
+  padding: 1rem 2rem 2rem 0;
+}
+
+.add-recipe {
+  display: flex;
+  gap: 2.3rem;
+}
+
+.search {
+  padding: 0.5rem 0 0.5rem 1.8rem;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: inherit;
+
+  outline: none;
+  border-radius: 3.9rem;
+  border: none;
+  height: 4rem;
+  width: 30rem;
+  margin-left: 2rem;
+}
+
+.search-button {
+  background-image: linear-gradient(to right bottom, #fbdb89, #f48982);
+  height: 4rem;
+  color: #f9f5f3;
+  font-size: 1.2rem;
+  font-weight: 400;
+  border-radius: 3.9rem;
+  width: 8.4rem;
+  border: none;
+  position: absolute;
+  right: 2rem;
+  cursor: pointer;
+}
+
+.search-results {
+  height: 100vh;
+}
+
+.result {
+  padding: 1.2rem 0 1.2rem 1.6rem;
+  transition: all 0.3s ease;
+}
+
+.result:hover {
+  background-color: #f9f5f3;
+}
+
+.something-text {
+  width: 17.2rem;
+  color: #615551;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-top: 2.9rem;
+  margin-left: 9.1rem;
+}
+
+.preview-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+.prev__fig {
+  flex: 0 0 5.8rem;
+  border-radius: 50%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 5.8rem;
+  position: relative;
+  backface-visibility: hidden;
+}
+
+.preview-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.preview-box {
+  display: grid;
+  grid-template-columns: 1fr 2rem;
+  row-gap: 0.1rem;
+  align-items: center;
+}
+
+.preview-title {
+  grid-column: 1/-1;
+  color: #f38e82;
+  font-size: 12px;
+  max-width: 16.5;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.preview-recipe-by {
+  color: #918581;
+  font-size: 0.9rem;
+}
+.preview-publisher,
+.preview-title {
+  text-transform: uppercase;
+}
+
+.pagination {
+  /* position: absolute;
+  bottom: 0; */
+  margin-top: auto;
+  margin-bottom: 1.6rem;
+
+  /* display: flex; */
+
+  width: 100%;
+  /* justify-content: space-between; */
+  /* padding: 1.2rem; */
+  padding: 0 1.6rem;
+}
+.pagination button {
+  cursor: pointer;
+  padding: 8px 12px;
+  border: none;
+  flex-shrink: 0;
+}
+
+.pagination__button--next {
+  float: right;
+}
+*/
+/* spinner */
+.spinner__div {
+  position: relative;
+}
+
+.spinner {
+  position: absolute;
+  right: 47%;
+  top: 30%;
+
+  border: 8px solid rgba(247, 172, 133, 0.1);
+  border-left-color: #f18c80;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.preview--active {
+  background-color: #f9f5f3;
+}
+
+.recipe--Image {
+  width: 100%;
+  height: 16rem;
+}
+
+.recipe--time--servings {
+  width: 100%;
+  height: 8rem;
+}
+
+.recipe--ingredients {
+  width: 100%;
+  height: 22rem;
+}
+
+.recipe--Cooking--way {
+  width: 100%;
+  height: 12.2rem;
+}
+.recipe {
+  max-width: 35.3rem;
+  height: 58.2rem;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.recipeImage {
+  max-width: 100%;
+}
+
+.recipecontainer__modal .close__modal {
+  position: absolute;
+
+  right: 5px;
+  font-family: inherit;
+  font-size: 3.5rem;
+  cursor: pointer;
+  border: none;
+}
+
+.recipecontainer__modal {
+  position: absolute;
+  top: 10rem;
+}
