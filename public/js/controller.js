@@ -36,6 +36,7 @@ class Controller {
     if (!id) return;
 
     await recipeState.loadRecipe(id);
+    recipeView._clear();
 
     recipeView.render(recipeState.recipe);
     recipeView._showModal();
@@ -46,8 +47,7 @@ class Controller {
 function init() {
   searchView.addHandlerSearch(Controller.controlSearchResults);
   paginationView.addHandlerClick(Controller.moveToNextPageOfRecipeResult);
-
-  previewView._eventHandler(Controller.controlRecipe);
+  previewView._addHandlerClick(Controller.controlRecipe);
 }
 
 init();

@@ -13,7 +13,7 @@ class CallRecipeApi {
 
   static async withRecipeName(recipeName) {
     try {
-      const response = await fetch(`${API_URL}/search?q=${recipeName}`);
+      const response = await fetch(`${API_URL}?search=${recipeName}`);
 
       const res = await Promise.race([response, this.timeOut(5)]);
       const data = await res.json();
@@ -29,7 +29,7 @@ class CallRecipeApi {
 
   static async withRecipeId(recipeId) {
     try {
-      const response = await fetch(`${API_URL}/get?rId=${recipeId}`);
+      const response = await fetch(`${API_URL}/${recipeId}`);
       const res = await Promise.race([response, this.timeOut]);
       let data = res.json();
       return data;

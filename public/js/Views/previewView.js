@@ -3,23 +3,29 @@ import Views from "./View.js";
 class PreviewView extends Views {
   _parentElement = "";
 
-  _eventHandler(handler) {
+  static _eventHandler(handler) {
+    let resultV = document.querySelector(".results");
     ["load", "hashchange"].forEach(function (el) {
       window.addEventListener(el, function (e) {
         let id = window.location.hash.slice(1);
-
+        console.log(resultV);
+        // if (resultV.querySelectorAll(".result").length >= 1) {
         handler(id);
+        // }
       });
     });
-    PreviewView._addHandlerClick();
   }
 
-  static _addHandlerClick() {
+  _addHandlerClick(handler) {
+    PreviewView._showActivePreview(handler);
+  }
+
+  static _showActivePreview(handler) {
     let previewClick = document.querySelector(".results");
-
     previewClick.addEventListener("click", function (e) {
-      let supId = e.target.closest(".result");
+      PreviewView._eventHandler(handler);
 
+      let supId = e.target.closest(".result");
       previewClick.querySelectorAll("li").forEach(function (el) {
         if (el.classList.contains("preview--active")) {
           el.classList.remove("preview--active");
@@ -52,3 +58,11 @@ class PreviewView extends Views {
 }
 
 export default new PreviewView();
+
+window.addEventListener("load", function (e) {
+  console.log(e);
+});
+
+window.addEventListener("loadstart", function (e) {
+  console.log(e);
+});
