@@ -29,6 +29,7 @@ class RecipeView extends Views {
   }
 
   _generateMarkup() {
+    console.log(this._data);
     return `
     <span class="close__modal">×</span>
     <figure class="recipe__fig">
@@ -40,14 +41,35 @@ class RecipeView extends Views {
       </h1>
     </figure>
     <div class="recipe__details">
-    <ul>
+      <span>${this._data.cooking_time} MINUTES</span>
+      <span>${this._data.servings} SERVINGS</span>
+    </div>
+    <div class="recipe--ingredients">
+    <ul class="recipe__ingredientList">
 
-    ${this._data.ingredients.map((val) => `<li>${val}</li>`).join("")}
+    ${this._data.ingredients
+      .map(
+        (val) =>
+          `<li>${[
+            val.quantity,
+            val.unit ? val.unit : "",
+            val.description ? val.description : "",
+          ].join(" ")}</li>`
+      )
+      .join("")}
     
     </ul>
     </div>
-    <div class="recipe--ingredients"></div>
-    <div class="recipe--Cooking--way"></div>
+    <div class="recipe--Cooking--way">
+          
+    <h2>HOW TO COOK IT</h2>
+    <p>This recipe was carefully designed and tested by ${
+      this._data.publisher
+    }. Please check out directions at their website. </p>
+    <a href=${this._data.source_url}>
+    DIRECTIONS ->
+    </a>
+    </div>
     `;
   }
 }

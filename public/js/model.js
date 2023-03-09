@@ -13,7 +13,7 @@ class RecipeState {
     try {
       const res = await CallRecipeApi.withRecipeId(id);
 
-      this.recipe = res.recipe;
+      this.recipe = res.data.recipe;
     } catch (error) {
       throw error;
     }
@@ -22,12 +22,13 @@ class RecipeState {
   async loadSearchResults(query) {
     try {
       let res = await CallRecipeApi.withRecipeName(query);
+      console.log(recipeState);
       if (res.error) {
         throw new Error(res.error);
       }
       this.search.query = query;
 
-      this.search.results = res.recipes.map((rec) => rec);
+      this.search.results = res.data.recipes.map((rec) => rec);
     } catch (error) {
       throw error;
     }

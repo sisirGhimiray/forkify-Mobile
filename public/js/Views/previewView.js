@@ -37,7 +37,7 @@ class PreviewView extends Views {
 
   _generateMarkup() {
     return `<li class="result">
-    <a href="#${this._data.recipe_id}" class="preview-link">
+    <a href="#${this._data.id}" class="preview-link">
       <figure class="prev__fig">
         <img
           class="preview-img"

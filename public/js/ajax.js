@@ -14,9 +14,9 @@ class CallRecipeApi {
   static async withRecipeName(recipeName) {
     try {
       const response = await fetch(`${API_URL}?search=${recipeName}`);
-
       const res = await Promise.race([response, this.timeOut(5)]);
       const data = await res.json();
+      console.log(data);
       if (response.ok === false) {
         throw new Error(data.error);
       }
@@ -29,7 +29,8 @@ class CallRecipeApi {
 
   static async withRecipeId(recipeId) {
     try {
-      const response = await fetch(`${API_URL}/${recipeId}`);
+      console.log(recipeId);
+      const response = await fetch(`${API_URL}${recipeId}`);
       const res = await Promise.race([response, this.timeOut]);
       let data = res.json();
       return data;

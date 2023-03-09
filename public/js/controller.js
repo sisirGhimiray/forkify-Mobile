@@ -14,6 +14,7 @@ class Controller {
       if (!query) return;
 
       await recipeState.loadSearchResults(query);
+      console.log(recipeState);
       resultView._clear();
       resultView.render(recipeState.getSearchResultPerPage());
 
